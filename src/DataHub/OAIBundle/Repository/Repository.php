@@ -218,7 +218,7 @@ class Repository implements InterfaceRepository
 
         $formats[] = new ImplementationMetadataFormatType(
             'oai_lido',
-            'http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd',
+            'http://www.lido-schema.org/schema/v1.1/lido-v1.1-public-beta.xsd',
             'http://www.lido-schema.org/'
         );
 

@@ -21,14 +21,7 @@ class DataTypeLido implements DataTypeInterface {
      * {@inheritdoc}
      */
     public function __construct() {
-         $this->namespaceMap = [
-            'http://www.w3.org/XML/1998/namespace' => 'xml',
-            'http://www.w3.org/2001/XMLSchema' => 'xsd',
-            'http://www.lido-schema.org' => 'lido',
-            'http://www.opengis.net/gml' => 'gml',
-            'http://www.mda.org.uk/spectrumXML/Documentation' => 'doc',
-            'http://www.w3.org/2001/XMLSchema-instance' => 'xsi'
-        ];
+         $this->namespaceMap = [];
 
         $this->rootElement = '{http://www.lido-schema.org}lido';
 
@@ -36,10 +29,10 @@ class DataTypeLido implements DataTypeInterface {
             'http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd' => '/smil/2.0/smil20.xsd',
             'http://www.w3.org/1999/xlink.xsd' => '/xlink/1999/xlink.xsd',
             'http://www.w3.org/2001/xml.xsd' => '/xml/2001/xml.xsd',
-            'http://schemas.opengis.net/gml/3.1.1/base/feature.xsd' => '/opengis/3.1.1/base/gml.xsd',
+            'http://schemas.opengis.net/gml/3.1.1/base/gml.xsd' => '/opengis/3.1.1/base/gml.xsd'
         ];
 
-        $this->schema = '/lido/1.0/lido-v1.0.xsd';
+        $this->schema = '/lido/1.1/lido-v1.1-public-beta.xsd';
     }
 
     /**
