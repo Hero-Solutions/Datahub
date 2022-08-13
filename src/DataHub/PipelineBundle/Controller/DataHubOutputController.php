@@ -14,7 +14,7 @@ class DataHubOutputController extends Controller
      */
     public function dataHubOutputAction(Request $request)
     {
-        $filename = $this->getParameter('pipeline_log');
+        $filename = $this->getParameter('pipeline_logfile');
         if($filename === '') {
             return new Response('This Datahub is not configured to have a logfile accessible through browser.', 404);
         } else if(!file_exists($filename)) {
