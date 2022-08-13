@@ -24,8 +24,7 @@ class DataHubOutputController extends Controller
             $output = str_replace("\n", "<br/>", $output);
             $output = preg_replace("/\[[0-9]+\] - Datahub::Factory::CLI::setup_logging /", "", $output);
             $output = preg_replace("/[a-zA-z0-9.\/]+Datahub\/Factory\/CLI\.pm \(98\) : Logger activated - level WARN - config loaded from string:/", "", $output);
-            $output = str_replace("[92m", "", $output);
-            $output = str_replace("[33m", "", $output);
+            $output = preg_replace("/\[[0-9]{2}m/", "", $output);
             return new Response($output);
         }
     }
