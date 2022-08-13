@@ -7,12 +7,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DatahubOutputController extends Controller
+class DataHubOutputController extends Controller
 {
     /**
      * @Route("log", name="datahub_log")
      */
-    public function datahubOutputAction(Request $request)
+    public function dataHubOutputAction(Request $request)
     {
         $filename = $this->getParameter('pipeline_log');
         if($filename === '') {
