@@ -38,3 +38,8 @@ fos_oauth_server_token:
 
 fos_oauth_server_authorize:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+datahub_log:
+    resource: "@DataHubPipelineBundle/Controller/"
+    type:     annotation
+    prefix:   /

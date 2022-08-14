@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new DataHub\ResourceAPIBundle\DataHubResourceAPIBundle(),
             new DataHub\ResourceBundle\DataHubResourceBundle(),
             new DataHub\SetBundle\DataHubSetBundle(),
+            new DataHub\PipelineBundle\DataHubPipelineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
