@@ -286,7 +286,11 @@ class RecordController extends Controller
 
         // Get the JSON & XML Raw variants of the record
         $variantJSON = json_encode($record);
-        $variantXML = $request->getContent();
+        $requestContent = $request->getContent();
+        if(preg_match('/[\x00-\x08\x0B\x0C\x0E-\x1F]|\xED[\xA0-\xBF].|\xEF\xBF[\xBE\xBF]/', $requestContent)) {
+            $requestContent = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F]|\xED[\xA0-\xBF].|\xEF\xBF[\xBE\xBF]/', "\xEF\xBF\xBD", $requestContent);
+        }
+        $variantXML = $requestContent;
 
         $documentManager = $this->get('doctrine_mongodb')->getManager();
         $recordRepository = $this->get('datahub.resource_api.repository.default');
